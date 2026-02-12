@@ -11,12 +11,10 @@ int main() {
         cout << "Enter a string: ";
         cin >> s;
 
-        // Reverse logic
         for (int i = s.length() - 1; i >= 0; i--) {
             rev += s[i];
         }
 
-        // Palindrome check
         if (s == rev) {
             cout << "It is a Palindrome." << endl;
         } else {
