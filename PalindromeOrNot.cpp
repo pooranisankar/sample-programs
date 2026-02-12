@@ -18,7 +18,7 @@ int main() {
         if (s == rev) {
             cout << "It is a Palindrome." << endl;
         } else {
-            cout << "It is NOT a Palindrome." << endl;
+            cout << "It is not a Palindrome." << endl;
         }
 
         cout << "Do you want to continue (Y/N): ";
