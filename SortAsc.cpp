@@ -8,7 +8,6 @@ int main() {
         int a[6] = {9, 5, 7, 3, 8, 2};
         int temp;
 
-        // Sorting (Inner logic loop)
         for (int i = 0; i < 6; i++) {
             for (int j = i + 1; j < 6; j++) {
                 if (a[i] > a[j]) {
