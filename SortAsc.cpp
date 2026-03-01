@@ -5,11 +5,20 @@ int main() {
     char choice;
 
     do {
-        int a[6] = {9, 5, 7, 3, 8, 2};
-        int temp;
+        int n;
+        cout << "Enter size of array: ";
+        cin >> n;
 
-        for (int i = 0; i < 6; i++) {
-            for (int j = i + 1; j < 6; j++) {
+        int a[100], temp;
+
+        cout << "Enter array elements: ";
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+
+        // Sorting logic
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
                 if (a[i] > a[j]) {
                     temp = a[i];
                     a[i] = a[j];
@@ -19,7 +28,7 @@ int main() {
         }
 
         cout << "Sorted array is: ";
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < n; i++) {
             cout << a[i] << " ";
         }
         cout << endl;
@@ -27,20 +36,15 @@ int main() {
         cout << "\nDo you want to continue (Y/N): ";
         cin >> choice;
 
-        while (choice != 'Y' && choice != 'y' &&
-               choice != 'N' && choice != 'n') {
-            cout << "Invalid entry! Do you want to continue (Y/N): ";
-            cin >> choice;
+        if (choice == 'N' || choice == 'n') {
+            cout << "Program ended." << endl;
+        }
+        else if (choice != 'Y' && choice != 'y') {
+            cout << "Invalid entry!" << endl;
         }
 
     } while (choice == 'Y' || choice == 'y');
 
-    cout << "Program ended.";
     return 0;
 }
-
-
-
-
-
 /* sort an array in ascending order*/
