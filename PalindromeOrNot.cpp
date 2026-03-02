@@ -11,6 +11,12 @@ int main() {
         cout << "Enter a string: ";
         cin >> s;
 
+        for (int i = 0; i < s.length(); i++) {
+            if (s[i] >= 'A' && s[i] <= 'Z') {
+                s[i] = s[i] + 32;  
+            }
+        }
+
         for (int i = s.length() - 1; i >= 0; i--) {
             rev += s[i];
         }
@@ -18,29 +24,21 @@ int main() {
         if (s == rev) {
             cout << "It is a Palindrome." << endl;
         } else {
-            cout << "It is not a Palindrome." << endl;
+            cout << "It is NOT a Palindrome." << endl;
         }
 
         cout << "Do you want to continue (Y/N): ";
         cin >> choice;
 
-        while (choice != 'Y' && choice != 'y' &&
-               choice != 'N' && choice != 'n') {
-            cout << "Invalid entry! Do you want to continue (Y/N): ";
-            cin >> choice;
+        if (choice != 'Y' && choice != 'y' &&
+            choice != 'N' && choice != 'n') {
+            cout << "Invalid entry!" << endl;
+            break;   
         }
 
     } while (choice == 'Y' || choice == 'y');
 
-    cout << "Program ended.";
+    cout << "Program ended." << endl;
     return 0;
 }
-
-
-
-
-
-
-
-
 /* find whether the given string is palindrome or not*/
