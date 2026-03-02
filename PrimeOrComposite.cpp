@@ -5,21 +5,33 @@ int main() {
     char choice;
 
     do {
-        int n, count = 0;
+        int n;
 
         cout << "Enter a number: ";
-        cin >> n;
 
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                count++;
-            }
+        while (!(cin >> n)) {
+            cout << "Invalid input! Enter numbers only: ";
+            cin.clear();
+            cin.ignore(1000, '\n');
         }
 
-        if (count == 2)
-            cout << "It is a prime number" << endl;
-        else
-            cout << "It is a composite number" << endl;
+        if (n <= 1) {
+            cout << "It is neither prime nor composite." << endl;
+        }
+        else {
+            int count = 0;
+
+            for (int i = 1; i <= n; i++) {
+                if (n % i == 0) {
+                    count++;
+                }
+            }
+
+            if (count == 2)
+                cout << "It is a prime number" << endl;
+            else
+                cout << "It is a composite number" << endl;
+        }
 
         cout << "Do you want to continue (Y/N): ";
         cin >> choice;
@@ -32,11 +44,8 @@ int main() {
 
     } while (choice == 'Y' || choice == 'y');
 
-    cout << "Program ended.";
+    cout << "Program ended." << endl;
+
     return 0;
 }
-
-
-
-
 /* find whether the given number is prime or composite*/
