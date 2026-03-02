@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 
@@ -9,7 +8,12 @@ int main() {
         int number;
 
         cout << "Enter a number: ";
-        cin >> number;
+
+        while (!(cin >> number)) {
+            cout << "Invalid input! Enter numbers only: ";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        }
 
         if (number % 2 == 0) {
             cout << "It is an even number." << endl;
@@ -29,7 +33,9 @@ int main() {
 
     } while (choice == 'Y' || choice == 'y');
 
-    cout << "Program ended.";
+    cout << "Program ended." << endl;
+
     return 0;
 }
+
 /* find whether the given number is even or odd*/
